@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Hassan — Lead Software Engineer | Backend, DevOps & AI</title>
+<meta name="description" content="Lead Software Engineer with 6+ years building scalable backend systems, AI-powered automation, and cloud infrastructure for fintech, health tech, and enterprise SaaS.">
+<meta name="theme-color" content="#060a12">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Muhammad Hassan — Lead Software Engineer">
+<meta property="og:description" content="6+ years building scalable backend systems, AI-powered automation, and cloud infrastructure. Currently leading engineering at Circler Inc.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muhammad-hassan-dev.vercel.app/">
+<meta property="og:image" content="https://muhammad-hassan-dev.vercel.app/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Hassan — Lead Software Engineer">
+<meta name="twitter:description" content="6+ years building scalable backend systems, AI-powered automation, and cloud infrastructure.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://muhammad-hassan-dev.vercel.app/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060a12;
+  --bg-card: rgba(12, 18, 32, 0.6);
+  --border: rgba(56, 189, 248, 0.07);
+  --border-hover: rgba(56, 189, 248, 0.22);
+  --text: #b0bec9;
+  --text-muted: #4a5d73;
+  --text-heading: #eaf0f6;
+  --accent: #38bdf8;
+  --accent-2: #34d399;
+  --accent-3: #fb923c;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Outfit', sans-serif;
+  --max-w: 1100px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #1e293b var(--bg); }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: rgba(56, 189, 248, 0.15); color: var(--accent); }
+a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+a:hover { opacity: 0.8; }
+
+/* Canvas */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Noise */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+section, nav, footer { position: relative; z-index: 2; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 40px; }
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(24px);
+  background: rgba(6, 10, 18, 0.75);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.4s var(--ease);
+}
+nav.scrolled { padding: 12px 40px; }
+
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-heading);
+  letter-spacing: -0.5px;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease);
+}
+.nav-links a:hover { color: var(--accent); opacity: 1; }
+.nav-links a:hover::after { width: 100%; }
+
+/* Resume button in nav */
+.nav-resume {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 6px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-resume::after { display: none !important; }
+.nav-resume:hover { background: rgba(56, 189, 248, 0.08); border-color: var(--accent); color: var(--accent); opacity: 1; }
+.nav-resume svg { width: 12px; height: 12px; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; z-index: 101; }
+.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text-muted); margin: 4px 0; transition: 0.3s; }
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+/* Section helpers */
+.section-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+.hero-content { max-width: 720px; }
+
+/* Terminal */
+.terminal {
+  background: rgba(10, 15, 26, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.6);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.06);
+}
+.terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+.terminal-dot.r { background: #ef4444; }
+.terminal-dot.y { background: #eab308; }
+.terminal-dot.g { background: #22c55e; }
+.terminal-bar span {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+.terminal-body {
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.8;
+  min-height: 200px;
+}
+.terminal-line { display: block; margin-bottom: 2px; }
+.t-prompt { color: var(--accent-2); }
+.t-cmd { color: var(--text-heading); }
+.t-flag { color: var(--accent-3); }
+.t-str { color: var(--accent); }
+.t-comment { color: var(--text-muted); }
+.t-output { color: var(--text); }
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: var(--accent);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Noscript fallback for terminal */
+.terminal-noscript {
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.hero-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 0; }
+
+.btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+.btn-primary:hover { opacity: 1; background: #5cc9f5; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(56, 189, 248, 0.15); }
+
+.btn-ghost {
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  color: var(--text);
+}
+.btn-ghost:hover { opacity: 1; border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+/* Stats */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat-val {
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accent);
+  display: block;
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* About blurb */
+.about-blurb {
+  padding: 80px 0 0;
+}
+.about-content {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about-content p {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Experience */
+.exp-section { padding: 80px 0; }
+.exp-grid { display: flex; flex-direction: column; gap: 20px; }
+
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: border-color 0.4s, transform 0.4s var(--ease), box-shadow 0.4s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--accent);
+  transition: height 0.4s var(--ease);
+  border-radius: 0 0 2px 0;
+}
+.exp-card:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.exp-card:hover::before { height: 100%; }
+
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+.exp-role { font-size: 18px; font-weight: 600; color: var(--text-heading); }
+.exp-company { color: var(--accent); }
+.exp-date { font-family: var(--mono); font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+.exp-desc { font-size: 15px; color: var(--text); margin-bottom: 16px; line-height: 1.7; }
+
+.exp-highlights { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.exp-highlight {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent-2);
+  background: rgba(52, 211, 153, 0.06);
+  border: 1px solid rgba(52, 211, 153, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.exp-tech { display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-tech-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 3px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.exp-card:hover .exp-tech-tag { border-color: rgba(56, 189, 248, 0.12); }
+
+/* Projects */
+.proj-section { padding: 80px 0; }
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.proj-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 0.4s, transform 0.4s var(--ease), box-shadow 0.4s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.proj-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(56, 189, 248, 0.04), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.proj-card:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.proj-card:hover::after { opacity: 1; }
+
+.proj-icon {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.proj-card h3 { font-size: 17px; font-weight: 600; color: var(--text-heading); margin-bottom: 10px; line-height: 1.4; }
+.proj-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.7; flex: 1; }
+
+.proj-metrics { display: flex; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+.proj-metric { font-family: var(--mono); font-size: 11px; }
+.proj-metric-val { color: var(--accent-2); font-weight: 600; }
+.proj-metric-label { color: var(--text-muted); margin-left: 4px; }
+
+/* Skills */
+.skills-section { padding: 80px 0; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.skill-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  transition: border-color 0.3s;
+}
+.skill-group:hover { border-color: var(--border-hover); }
+
+.skill-group-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 4px;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.skill-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+/* Contact */
+.contact-section { padding: 80px 0; border-top: 1px solid var(--border); }
+
+.contact-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
+.contact-left { max-width: 520px; }
+.contact-left p { font-size: 16px; color: var(--text); margin-bottom: 28px; line-height: 1.7; }
+
+.contact-channels { display: flex; flex-direction: column; gap: 14px; }
+.contact-link {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.3s, transform 0.3s var(--ease);
+}
+.contact-link:hover { color: var(--accent); opacity: 1; transform: translateX(4px); }
+
+.contact-link-label {
+  color: var(--text-muted);
+  min-width: 64px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+  padding: 32px 40px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+footer p {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+footer .f-accent { color: var(--accent); }
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+  nav { padding: 16px 24px; backdrop-filter: none !important; background: rgba(6, 10, 18, 0.95) !important; }
+  
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    background: #060a12;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 18px; letter-spacing: 2px; color: var(--text-heading); }
+  .nav-links a::after { display: none; }
+  .nav-resume { font-size: 14px; padding: 10px 20px; }
+  .nav-toggle { display: block; z-index: 9999; position: relative; }
+
+  .section-title { font-size: 26px; margin-bottom: 32px; }
+  .exp-section, .proj-section, .skills-section, .contact-section { padding: 64px 0; }
+  .about-blurb { padding: 64px 0 0; }
+  .hero { min-height: auto; padding-top: 80px; padding-bottom: 40px; }
+  .exp-header { flex-direction: column; gap: 4px; }
+  .exp-card { padding: 24px; }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { flex-direction: column; }
+  .contact-left { max-width: 100%; }
+}
+
+/* Responsive - Phone */
+@media (max-width: 480px) {
+  .container { padding: 0 18px; }
+  
+  .terminal-body { font-size: 12px; padding: 14px; min-height: 160px; }
+  .terminal-bar span { font-size: 10px; }
+  
+  .hero-links { flex-direction: column; }
+  .hero-links .btn { text-align: center; justify-content: center; }
+  
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .hero-stat-val { font-size: 22px; }
+  
+  .section-title { font-size: 22px; margin-bottom: 28px; }
+  .exp-section, .proj-section, .skills-section, .contact-section { padding: 52px 0; }
+  .about-blurb { padding: 52px 0 0; }
+  
+  .exp-role { font-size: 16px; }
+  .exp-card { padding: 20px; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-card { padding: 20px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-group { padding: 16px; }
+  
+  .contact-left p { font-size: 14px; }
+  .contact-link { font-size: 12px; word-break: break-all; }
+  .contact-link-label { min-width: 54px; font-size: 9px; }
+  
+  footer { padding: 20px 18px; }
+  footer p { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<nav id="nav">
+  <div class="nav-logo">hassan<span>.</span>dev</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" onclick="closeNav()">About</a>
+    <a href="#experience" onclick="closeNav()">Experience</a>
+    <a href="#projects" onclick="closeNav()">Projects</a>
+    <a href="#skills" onclick="closeNav()">Skills</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+    <a href="/resume.pdf" target="_blank" rel="noopener" class="nav-resume" onclick="closeNav()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Resume
+    </a>
+  </div>
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dot r"></div>
+          <div class="terminal-dot y"></div>
+          <div class="terminal-dot g"></div>
+          <span>hassan@dev ~ </span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <span class="cursor" id="cursor"></span>
+          <!-- Noscript fallback so content is visible without JS -->
+          <noscript>
+            <div class="terminal-noscript">
+              <span class="terminal-line"><span class="t-prompt">$ </span><span class="t-cmd">whoami</span></span>
+              <span class="terminal-line"><span class="t-output">Muhammad Hassan — Lead Software Engineer</span></span>
+              <span class="terminal-line">&nbsp;</span>
+              <span class="terminal-line"><span class="t-prompt">$ </span><span class="t-cmd">cat </span><span class="t-str">about.txt</span></span>
+              <span class="terminal-line"><span class="t-output">I build backend systems that handle millions of requests</span></span>
+              <span class="terminal-line"><span class="t-output">for fintech, health tech, and enterprise SaaS companies.</span></span>
+              <span class="terminal-line">&nbsp;</span>
+              <span class="terminal-line"><span class="t-prompt">$ </span><span class="t-cmd">stack </span><span class="t-flag">--current</span></span>
+              <span class="terminal-line"><span class="t-output">Django · Node.js · React · PostgreSQL · AWS · Docker · Terraform</span></span>
+              <span class="terminal-line">&nbsp;</span>
+              <span class="terminal-line"><span class="t-prompt">$ </span><span class="t-cmd">status </span><span class="t-flag">--now</span></span>
+              <span class="terminal-line"><span class="t-output">Leading engineering @ Circler Inc. Open to select projects.</span></span>
+            </div>
+          </noscript>
+        </div>
+      </div>
+
+      <div class="hero-links" style="opacity:0" id="heroLinks">
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+        <a href="https://linkedin.com/in/hassanhere/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://www.upwork.com/freelancers/~01405f17a192707b9a" target="_blank" rel="noopener" class="btn btn-ghost">Upwork</a>
+      </div>
+
+      <!-- FIX: Default text content shows real values, not "0" -->
+      <div class="hero-stats" style="opacity:0" id="heroStats">
+        <div>
+          <span class="hero-stat-val" data-count="6" data-suffix="+">6+</span>
+          <span class="hero-stat-label">Years in Production</span>
+        </div>
+        <div>
+          <span class="hero-stat-val" data-prefix="~" data-count="1" data-suffix="M">~1M</span>
+          <span class="hero-stat-label">Requests/sec (peak)</span>
+        </div>
+        <div>
+          <span class="hero-stat-val" data-count="99.9" data-suffix="%" data-decimal="1">99.9%</span>
+          <span class="hero-stat-label">Uptime SLA</span>
+        </div>
+        <div>
+          <span class="hero-stat-val" data-count="20" data-suffix="+">20+</span>
+          <span class="hero-stat-label">SaaS Products</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-blurb" id="about">
+  <div class="container">
+    <span class="section-tag reveal">00 About</span>
+    <div class="about-content reveal">
+      <p>I am based in Pakistan and have been doing this for about 6 years now. Most of that time has been spent working remotely with US startups and enterprises, building the kind of backend systems that need to stay up no matter what — things like a government health platform that handled around a million requests per second, or fintech pipelines crunching through half a million rows in a few minutes.</p>
+      <p>I tend to end up owning the full picture: architecture, deployments, infrastructure, incident response. I like working with small teams where there is not much room to hide and the work actually matters. If something breaks at 2 AM, I am usually the one fixing it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp-section" id="experience">
+  <div class="container">
+    <span class="section-tag reveal">01 Experience</span>
+    <h2 class="section-title reveal">Where I have worked</h2>
+    <div class="exp-grid">
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div><div class="exp-role">Lead Software Engineer <span class="exp-company">@ Circler Inc.</span></div></div>
+          <div class="exp-date">Mar 2025 — Present</div>
+        </div>
+        <p class="exp-desc">Building an AI-powered bookkeeping automation platform that integrates banking, accounting, and marketplace data. Leading a team of 3 to 5 engineers across architecture, deployments, and incident response.</p>
+        <div class="exp-highlights">
+          <span class="exp-highlight">99.9% uptime</span>
+          <span class="exp-highlight">500k rows in &lt;5 min</span>
+          <span class="exp-highlight">35% latency reduction</span>
+          <span class="exp-highlight">70% manual work cut</span>
+        </div>
+        <div class="exp-tech">
+          <span class="exp-tech-tag">Django</span><span class="exp-tech-tag">React</span><span class="exp-tech-tag">PostgreSQL</span><span class="exp-tech-tag">Celery</span><span class="exp-tech-tag">Redis</span><span class="exp-tech-tag">AWS</span><span class="exp-tech-tag">Terraform</span><span class="exp-tech-tag">Pinecone</span><span class="exp-tech-tag">OpenAI</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div><div class="exp-role">L5 Software Engineer & DevOps Lead <span class="exp-company">@ Red Buffer</span></div></div>
+          <div class="exp-date">Dec 2020 — Feb 2025</div>
+        </div>
+        <p class="exp-desc">Built distributed backend systems for real-time platforms, geospatial tracking, and high-throughput operations across health tech, sports, and enterprise SaaS. Owned production reliability, infrastructure as code, and incident response.</p>
+        <div class="exp-highlights">
+          <span class="exp-highlight">~1M req/sec</span>
+          <span class="exp-highlight">80% query time cut</span>
+          <span class="exp-highlight">99.9% SLA</span>
+          <span class="exp-highlight">5-Whys RCA</span>
+        </div>
+        <div class="exp-tech">
+          <span class="exp-tech-tag">Node.js</span><span class="exp-tech-tag">NestJS</span><span class="exp-tech-tag">PostgreSQL</span><span class="exp-tech-tag">PostGIS</span><span class="exp-tech-tag">RabbitMQ</span><span class="exp-tech-tag">AWS</span><span class="exp-tech-tag">Docker</span><span class="exp-tech-tag">Terraform</span><span class="exp-tech-tag">Ansible</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div><div class="exp-role">Software Engineer (Backend) <span class="exp-company">@ YouScale / iClosed</span></div></div>
+          <div class="exp-date">Feb 2023 — Nov 2023</div>
+        </div>
+        <p class="exp-desc">Built backend services for a US-based sales platform. Designed REST APIs, scheduled automation pipelines, and managed production deployments. Cut manual operational work by about 60%.</p>
+        <div class="exp-tech">
+          <span class="exp-tech-tag">Node.js</span><span class="exp-tech-tag">NestJS</span><span class="exp-tech-tag">PostgreSQL</span><span class="exp-tech-tag">AWS</span><span class="exp-tech-tag">WebSockets</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div><div class="exp-role">Associate Software Engineer <span class="exp-company">@ i2c Inc.</span></div></div>
+          <div class="exp-date">Sep 2020 — Dec 2020</div>
+        </div>
+        <p class="exp-desc">Supported high-availability financial systems in production. Monitored uptime for critical services, built automation scripts for log analysis and operational workflows, and ran root cause analysis on system failures to prevent repeat incidents.</p>
+        <div class="exp-tech">
+          <span class="exp-tech-tag">Python</span><span class="exp-tech-tag">Bash</span><span class="exp-tech-tag">Linux</span><span class="exp-tech-tag">Monitoring</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-header">
+          <div><div class="exp-role">Junior MERN Developer <span class="exp-company">@ Click Matrix</span></div></div>
+          <div class="exp-date">Feb 2020 — Sep 2020</div>
+        </div>
+        <p class="exp-desc">Built full-stack web applications from scratch. Developed React interfaces and RESTful APIs with Node.js and Express, designed MongoDB schemas, and took part in code reviews and feature planning.</p>
+        <div class="exp-tech">
+          <span class="exp-tech-tag">React</span><span class="exp-tech-tag">Node.js</span><span class="exp-tech-tag">Express</span><span class="exp-tech-tag">MongoDB</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="proj-section" id="projects">
+  <div class="container">
+    <span class="section-tag reveal">02 Projects</span>
+    <h2 class="section-title reveal">What I have built</h2>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-icon">Fintech / AI</div>
+        <h3>AI Bookkeeping Automation</h3>
+        <p>Automated financial pipeline connecting Plaid and QuickBooks with AI-powered transaction classification using vector search and LLM APIs. Human-in-the-loop review workflow for accountants.</p>
+        <div class="proj-metrics">
+          <span class="proj-metric"><span class="proj-metric-val">70%</span><span class="proj-metric-label">work reduced</span></span>
+          <span class="proj-metric"><span class="proj-metric-val">20+</span><span class="proj-metric-label">companies</span></span>
+        </div>
+        <div class="exp-tech"><span class="exp-tech-tag">Django</span><span class="exp-tech-tag">Pinecone</span><span class="exp-tech-tag">OpenAI</span><span class="exp-tech-tag">Plaid</span><span class="exp-tech-tag">QuickBooks</span></div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon">Fintech</div>
+        <h3>Invoice Reconciliation Platform</h3>
+        <p>Large-scale matching engine for US ticket brokers. Bulk CSV ingestion with automated validation and AI agent that extracts purchase data from emails. Real-time status via WebSockets.</p>
+        <div class="proj-metrics">
+          <span class="proj-metric"><span class="proj-metric-val">500k+</span><span class="proj-metric-label">rows</span></span>
+          <span class="proj-metric"><span class="proj-metric-val">&lt;5 min</span><span class="proj-metric-label">processing</span></span>
+        </div>
+        <div class="exp-tech"><span class="exp-tech-tag">Django</span><span class="exp-tech-tag">Celery</span><span class="exp-tech-tag">Redis</span><span class="exp-tech-tag">WebSockets</span><span class="exp-tech-tag">AWS</span></div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon">Health Tech / Govt</div>
+        <h3>Geospatial Health Platform</h3>
+        <p>Government platform tracking field worker coverage for Pakistan's polio program. Master-replica PostgreSQL cluster, custom load balancer, and event-driven processing with RabbitMQ.</p>
+        <div class="proj-metrics">
+          <span class="proj-metric"><span class="proj-metric-val">~1M</span><span class="proj-metric-label">req/sec</span></span>
+          <span class="proj-metric"><span class="proj-metric-val">80%</span><span class="proj-metric-label">faster queries</span></span>
+        </div>
+        <div class="exp-tech"><span class="exp-tech-tag">Node.js</span><span class="exp-tech-tag">PostGIS</span><span class="exp-tech-tag">RabbitMQ</span><span class="exp-tech-tag">Docker</span></div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon">Real-Time / Sports</div>
+        <h3>RaveOn Sports Platform</h3>
+        <p>Live sports engagement platform with real-time commentary, chat rooms, and audio/video spaces. Event-driven NestJS microservices with RabbitMQ and token-based public API.</p>
+        <div class="exp-tech"><span class="exp-tech-tag">NestJS</span><span class="exp-tech-tag">PostgreSQL</span><span class="exp-tech-tag">RabbitMQ</span><span class="exp-tech-tag">WebSockets</span></div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon">Enterprise / Ops</div>
+        <h3>Incident Management System</h3>
+        <p>US-based multi-agency incident coordination platform. Relational data models for organizations, incidents, and contractors with real-time tracking and cross-agency reporting.</p>
+        <div class="exp-tech"><span class="exp-tech-tag">Node.js</span><span class="exp-tech-tag">React</span><span class="exp-tech-tag">MySQL</span><span class="exp-tech-tag">Docker</span><span class="exp-tech-tag">AWS</span></div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-icon">Govt / NDA</div>
+        <h3>Confidential Government Platform</h3>
+        <p>Enterprise platform for regulated workflows and sensitive operational data. Horizontally scaled API nodes behind a custom load balancer with master-replica PostgreSQL and PostGIS.</p>
+        <div class="exp-tech"><span class="exp-tech-tag">Node.js</span><span class="exp-tech-tag">PostgreSQL</span><span class="exp-tech-tag">PostGIS</span><span class="exp-tech-tag">RabbitMQ</span><span class="exp-tech-tag">Docker</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="container">
+    <span class="section-tag reveal">03 Skills</span>
+    <h2 class="section-title reveal">What I work with</h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal"><div class="skill-group-title">Languages</div><div class="skill-tags"><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">SQL</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-title">Backend</div><div class="skill-tags"><span class="skill-tag">Node.js</span><span class="skill-tag">Express</span><span class="skill-tag">NestJS</span><span class="skill-tag">Django</span><span class="skill-tag">Celery</span><span class="skill-tag">GraphQL</span><span class="skill-tag">REST APIs</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-title">Frontend</div><div class="skill-tags"><span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">Redux</span><span class="skill-tag">HTML/CSS</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-title">Databases</div><div class="skill-tags"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">DynamoDB</span><span class="skill-tag">PostGIS</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-title">Cloud & DevOps</div><div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Docker</span><span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span><span class="skill-tag">CI/CD</span><span class="skill-tag">CloudFormation</span><span class="skill-tag">Linux</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-title">AI & Data</div><div class="skill-tags"><span class="skill-tag">OpenAI API</span><span class="skill-tag">Pinecone</span><span class="skill-tag">Vector Search</span><span class="skill-tag">LLM Integration</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">AI Agents</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-title">Architecture</div><div class="skill-tags"><span class="skill-tag">Distributed Systems</span><span class="skill-tag">Microservices</span><span class="skill-tag">Event-Driven</span><span class="skill-tag">Pub/Sub</span><span class="skill-tag">Multi-Tenant</span><span class="skill-tag">Message Queues</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-title">Tools</div><div class="skill-tags"><span class="skill-tag">RabbitMQ</span><span class="skill-tag">WebSockets</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Jira</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <span class="section-tag reveal">04 Contact</span>
+    <h2 class="section-title reveal">Have a project in mind?</h2>
+    <div class="contact-grid reveal">
+      <div class="contact-left">
+        <p>I am always interested in hearing about new projects, especially from startup founders who need someone to own the technical side end to end. Whether it is a greenfield build, scaling an existing system, or adding AI capabilities to your product, I would be happy to talk through it.</p>
+        <p style="margin-bottom: 32px; color: var(--text-muted); font-size: 14px;">Currently available for select freelance projects and open to full-time roles with the right team.</p>
+        <div class="contact-channels">
+          <a href="mailto:muhammad.hassan.99.cs@gmail.com" class="contact-link"><span class="contact-link-label">Email</span>muhammad.hassan.99.cs@gmail.com</a>
+          <a href="https://linkedin.com/in/hassanhere/" target="_blank" rel="noopener" class="contact-link"><span class="contact-link-label">LinkedIn</span>linkedin.com/in/hassanhere</a>
+          <a href="https://www.upwork.com/freelancers/~01405f17a192707b9a" target="_blank" rel="noopener" class="contact-link"><span class="contact-link-label">Upwork</span>upwork.com/freelancers/~01405f17a192707b9a</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>No frameworks. No build step. Just <span class="f-accent">HTML</span>, <span class="f-accent">CSS</span>, and <span class="f-accent">JS</span>.</p>
+</footer>
+
+<script>
+// ── Particle constellation background ──
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let mouse = { x: -1000, y: -1000 };
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+document.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+class Particle {
+  constructor() {
+    this.reset();
+  }
+  reset() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.r = Math.random() * 1.5 + 0.5;
+    this.alpha = Math.random() * 0.3 + 0.1;
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > W) this.vx *= -1;
+    if (this.y < 0 || this.y > H) this.vy *= -1;
+
+    const dx = mouse.x - this.x;
+    const dy = mouse.y - this.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < 200) {
+      this.x -= dx * 0.005;
+      this.y -= dy * 0.005;
+    }
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(56, 189, 248, ${this.alpha})`;
+    ctx.fill();
+  }
+}
+
+const count = Math.min(80, Math.floor((W * H) / 18000));
+for (let i = 0; i < count; i++) particles.push(new Particle());
+
+function drawLines() {
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d < 150) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(56, 189, 248, ${0.06 * (1 - d / 150)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => { p.update(); p.draw(); });
+  drawLines();
+  requestAnimationFrame(animate);
+}
+animate();
+
+// ── Terminal typing ──
+const lines = [
+  { type: 'cmd', parts: [
+    { text: '$ ', cls: 't-prompt' },
+    { text: 'whoami', cls: 't-cmd' }
+  ]},
+  { type: 'output', parts: [
+    { text: 'Muhammad Hassan — Lead Software Engineer', cls: 't-output' }
+  ]},
+  { type: 'blank' },
+  { type: 'cmd', parts: [
+    { text: '$ ', cls: 't-prompt' },
+    { text: 'cat ', cls: 't-cmd' },
+    { text: 'about.txt', cls: 't-str' }
+  ]},
+  { type: 'output', parts: [
+    { text: 'I build backend systems that handle millions of requests', cls: 't-output' }
+  ]},
+  { type: 'output', parts: [
+    { text: 'for fintech, health tech, and enterprise SaaS companies.', cls: 't-output' }
+  ]},
+  { type: 'blank' },
+  { type: 'cmd', parts: [
+    { text: '$ ', cls: 't-prompt' },
+    { text: 'stack ', cls: 't-cmd' },
+    { text: '--current', cls: 't-flag' }
+  ]},
+  { type: 'output', parts: [
+    { text: 'Django · Node.js · React · PostgreSQL · AWS · Docker · Terraform', cls: 't-output' }
+  ]},
+  { type: 'blank' },
+  { type: 'cmd', parts: [
+    { text: '$ ', cls: 't-prompt' },
+    { text: 'status ', cls: 't-cmd' },
+    { text: '--now', cls: 't-flag' }
+  ]},
+  { type: 'output', parts: [
+    { text: 'Leading engineering @ Circler Inc. Open to select projects.', cls: 't-output' }
+  ]},
+];
+
+const termBody = document.getElementById('terminalBody');
+const cursorEl = document.getElementById('cursor');
+
+async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function typeLine(parts, container) {
+  for (const part of parts) {
+    const span = document.createElement('span');
+    span.className = part.cls;
+    container.appendChild(span);
+
+    if (part.cls === 't-prompt' || part.cls === 't-output') {
+      span.textContent = part.text;
+      await sleep(part.cls === 't-output' ? 30 : 10);
+    } else {
+      for (const ch of part.text) {
+        span.textContent += ch;
+        await sleep(25 + Math.random() * 35);
+      }
+    }
+  }
+}
+
+async function runTerminal() {
+  await sleep(600);
+  for (const line of lines) {
+    const lineEl = document.createElement('span');
+    lineEl.className = 'terminal-line';
+    termBody.insertBefore(lineEl, cursorEl);
+
+    if (line.type === 'blank') {
+      lineEl.innerHTML = '&nbsp;';
+      await sleep(100);
+    } else if (line.type === 'cmd') {
+      await typeLine(line.parts, lineEl);
+      await sleep(300);
+    } else {
+      await typeLine(line.parts, lineEl);
+      await sleep(60);
+    }
+  }
+
+  cursorEl.style.display = 'none';
+
+  const heroLinks = document.getElementById('heroLinks');
+  const heroStats = document.getElementById('heroStats');
+  heroLinks.style.transition = 'opacity 0.6s';
+  heroLinks.style.opacity = '1';
+  await sleep(200);
+  heroStats.style.transition = 'opacity 0.6s';
+  heroStats.style.opacity = '1';
+  animateCounters();
+}
+runTerminal();
+
+// ── Animated counters ──
+function animateCounters() {
+  document.querySelectorAll('.hero-stat-val').forEach(el => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const decimal = parseInt(el.dataset.decimal) || 0;
+    const duration = 1200;
+    const start = performance.now();
+
+    // Reset to 0 for animation start
+    el.textContent = prefix + '0' + suffix;
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = (target * eased).toFixed(decimal);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+// ── Nav ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+function toggleNav() {
+  const links = document.getElementById('navLinks');
+  const toggle = document.getElementById('navToggle');
+  const isOpen = links.classList.toggle('open');
+  toggle.classList.toggle('open');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+function closeNav() {
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('navToggle').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Scroll reveal with stagger ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const siblings = entry.target.parentElement.querySelectorAll('.reveal, .reveal-left');
+      const idx = Array.from(siblings).indexOf(entry.target);
+      setTimeout(() => entry.target.classList.add('visible'), idx * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
+
+// Fallback: reveal everything after 4s in case observer misses
+setTimeout(() => {
+  document.querySelectorAll('.reveal, .reveal-left').forEach(el => el.classList.add('visible'));
+}, 4000);
+
+// ── Project card mouse glow ──
+document.querySelectorAll('.proj-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+  });
+});
+
+// ── Active nav link highlighting ──
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    if (window.scrollY >= top) current = section.getAttribute('id');
+  });
+  navLinks.forEach(link => {
+    link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+  });
+}, { passive: true });
+</script>
+
+</body>
+</html>
