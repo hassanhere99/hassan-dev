@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Muhammad Hassan - Software Engineer</title>
+<style>
+@page { size: Letter; margin: 0.5in; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Helvetica, Arial, sans-serif; font-size: 10pt; line-height: 1.35; color: #000; }
+h1 { font-size: 21pt; margin: 0; letter-spacing: 0.2px; }
+.title { font-size: 10.5pt; font-weight: bold; color: #1d4ed8; margin: 1px 0 2px; }
+.contact { font-size: 9.2pt; margin: 0 0 4px; }
+h2 { font-size: 10.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1d4ed8; border-bottom: 1px solid #1d4ed8; padding-bottom: 1px; margin: 9px 0 4px; }
+p { margin: 0 0 2px; }
+.role { display: flex; justify-content: space-between; margin-top: 6px; break-after: avoid; }
+.role b { font-size: 10pt; }
+.role span.d { white-space: nowrap; }
+.sub { font-style: italic; margin: 0 0 1px; }
+ul { margin: 1px 0 0; padding-left: 15px; }
+li { margin: 0 0 1.2px; }
+.sk p { margin: 0 0 1.5px; }
+a { color: #000; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Muhammad Hassan</h1>
+<div class="title">Software Engineer | SaaS Backends, LLM Agents and Evals</div>
+<div class="contact">muhammad.hassan.99.cs@gmail.com &middot; linkedin.com/in/hassanhere &middot; https://muhammad-hassan-dev.vercel.app</div>
+
+<h2>Summary</h2>
+<p>Software engineer with 6 years of experience building SaaS backends and LLM-powered products across workforce management, fintech and health tech. Most recently at ReadyOn AI, built an LLM scheduling assistant used by thousands of users at MGM, Aramark and Hilton, with promptfoo evals in CI to catch regressions in agent behavior. Before that, founding engineer at a fintech startup, leading 3-5 engineers. Core stack: TypeScript, Node.js/NestJS, Python/Django, React, PostgreSQL, AWS.</p>
+
+<h2>Technical Skills</h2>
+<div class="sk">
+<p><b>Languages:</b> TypeScript, JavaScript, Python</p>
+<p><b>Backend:</b> Node.js, NestJS, Express, Django, GraphQL (Federation), REST, TypeORM, Celery, WebSockets, RabbitMQ, AWS SQS</p>
+<p><b>Frontend:</b> React, Next.js, Redux, Zustand, React Query, Apollo Client, Tailwind CSS, PWA, IndexedDB</p>
+<p><b>AI / LLM:</b> LLM agents and tool design, promptfoo evals, eval datasets, model benchmarking, Langfuse, RAG, vector search (Pinecone), Claude / GPT / Mistral APIs</p>
+<p><b>Agent Tooling:</b> Claude Code skills and rules; MCP integrations (Jira, Langfuse, PostgreSQL, SigNoz)</p>
+<p><b>Databases:</b> PostgreSQL (read replicas, indexing, materialized views), PostGIS, MySQL, MongoDB, Redis</p>
+<p><b>Cloud / DevOps:</b> AWS (EC2, RDS, S3, ECS, SQS, CloudWatch, Bedrock), GCP, Docker, Nginx, CI/CD, production on-call</p>
+<p><b>Architecture / Other:</b> Distributed systems, multi-tenant SaaS, microservices, event-driven, TDD (Jest), JMeter, Stripe billing</p>
+</div>
+
+<h2>Experience</h2>
+
+<div class="role"><span><b>L5 Software Engineer</b> | ReadyOn AI (B2B Workforce Management SaaS)</span><span class="d">May 2026 - Nov 2026</span></div>
+<ul>
+<li>Shipped an LLM scheduling assistant used by thousands at MGM, Aramark and Hilton, adding agent tools for time-off, eligibility and attendance on GraphQL resolvers; cut customer time on manual forms by 75%</li>
+<li>Reduced token usage by ~60% by moving the tool list out of the system prompt into Claude skills loaded on demand; launched v2</li>
+<li>Built promptfoo eval suites with multi-tool chaining and smoke-tier CI guards, and used them to fix wrong date resolution, ambiguous shift references and leaked internal IDs</li>
+<li>Integrated Langfuse and turned thumbs-down responses into eval cases; wrote a Claude skill so the product team can check whether a response is a real bug</li>
+<li>Compared LLMs on cost and quality for the assistant; built the full Next.js chat UI with feedback buttons and live status via Pusher</li>
+<li>Built intra-shift rotations end to end in the shift-management service (NestJS, GraphQL Federation, PostgreSQL)</li>
+<li>Moved 20+ high-traffic schedule queries to PostgreSQL read replicas across 5 rollouts to take read load off the primary database</li>
+<li>Fixed security issues including PII exposed to worker apps, tenant ID enumeration, OTP consumed before validation and resolvers missing scope checks; rotated through production on-call</li>
+</ul>
+
+<div class="role"><span><b>Founding Engineer</b> | Circler Inc. (AI-Powered Fintech SaaS, US-based, Remote)</span><span class="d">Mar 2025 - May 2026</span></div>
+<ul>
+<li>Built an AI bookkeeping platform pulling banking, accounting and marketplace data into LLM workflows, serving 20+ companies at 99.9% uptime</li>
+<li>Led a team of 3-5 engineers: architecture decisions, code reviews, sprint planning and zero-downtime deployments; ran client meetings</li>
+<li>Built an AI reconciliation agent on GPT and Claude APIs that cut reconciliation time by 50% at 1,000+ transactions a day</li>
+<li>Built VESPER, a Slack agent on Claude Opus (AWS Bedrock) with GitHub and log access that opens Jira tickets via Jira MCP, raises PRs for small changes and answers product/QA questions from knowledge-base skills</li>
+<li>Built RAG transaction categorization on QuickBooks history (Pinecone) with an auto-learning feedback loop; accuracy rose from ~60% to 87% in 2 months</li>
+<li>Built a vector search pipeline categorizing 500K-row, 1GB CSVs within 5 minutes; cut API response times ~35%</li>
+<li>Migrated the production database from GCP to AWS next to the backend, eliminating a ~$200/month data transfer bill, and cut ~$150/month in staging costs</li>
+<li>Integrated Stripe for monthly and annual plans plus usage-based metered billing</li>
+</ul>
+
+<div class="role"><span><b>Senior Software Engineer</b> | Red Buffer, Islamabad</span><span class="d">Dec 2020 - Feb 2025</span></div>
+<ul>
+<li>Built a multi-tenant NestJS API platform test-first (99% Jest coverage) with token generation, RBAC, scoped permissions, rate limiting and usage monitoring</li>
+<li>Built the distributed backend of a national-scale health tracking platform, load-tested with JMeter at ~1M requests/sec; used RabbitMQ with a dead-letter queue so no live ping was lost</li>
+<li>Designed materialized-view reporting pipelines that cut analytics query time by ~80%</li>
+<li>Compressed multi-GB geospatial polygon datasets to 7-9MB for real-time maps on low-bandwidth connections</li>
+<li>Reduced P95 query latency by 60%+ through indexing, query refactoring and connection pooling</li>
+<li>Built live sports commentary (RabbitMQ to WebSockets) serving 5,000 concurrent users</li>
+<li>Built PES Spills, an offline-first PWA for hazard incident management with IndexedDB sync, conflict handling and role-based access; owned architecture and deployment as primary engineer</li>
+</ul>
+
+<div class="role"><span><b>Software Engineer, Backend (Part-Time)</b> | YouScale LLC / iClosed (US-based SaaS)</span><span class="d">Feb 2023 - Nov 2023</span></div>
+<ul>
+<li>Built a scheduling engine with email/SMS reminder pipelines that reduced no-show rates by 25%</li>
+<li>Built cron-based event pipelines processing 10K+ scheduled events a month; maintained 99.5%+ uptime on Node.js services</li>
+</ul>
+
+<div class="role"><span><b>Associate Software Engineer</b> | i2c Inc., Lahore</span><span class="d">Sep 2020 - Dec 2020</span></div>
+<ul>
+<li>Monitored production systems processing millions of transactions a day, resolving incidents within SLA and improving reliability by 30%</li>
+<li>Wrote monitoring automation scripts that cut manual intervention time by 40%</li>
+</ul>
+
+<div class="role"><span><b>Junior MERN Developer</b> | Click Matrix (Pvt) Ltd, Lahore</span><span class="d">Feb 2020 - Sep 2020</span></div>
+<ul>
+<li>Built 5+ responsive React interfaces and REST APIs (Node.js, Express, MongoDB) on 2-week sprints; took part in code reviews</li>
+<li>Improved frontend performance and API efficiency through better data fetching and component design</li>
+</ul>
+
+<h2>Projects</h2>
+<p><b>Navigators Club website</b> (navigators.travel) - Built a Pakistan tour operator's site in one month with Next.js, Payload CMS and MongoDB; enquiries are saved to an admin portal and emailed to the owner.</p>
+
+<h2>Education</h2>
+<div class="role" style="margin-top:0"><span><b>BS Computer &amp; Information Sciences</b> | Pakistan Institute of Engineering and Applied Sciences (PIEAS)</span><span class="d">2016 - 2020</span></div>
+<p>CGPA: 3.47 / 4.0</p>
+</body>
+</html>
